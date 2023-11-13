@@ -1,7 +1,3 @@
-using System.Threading;
-using System;
-using System.Collections.Generic;
-
 namespace Observer
 {
     public interface ISubject
