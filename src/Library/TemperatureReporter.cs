@@ -1,6 +1,6 @@
 namespace Observer
 {
-    public class TemperatureReporter
+    public class TemperatureReporter : IObserver
     {
         private bool first = true;
 
@@ -8,9 +8,9 @@ namespace Observer
 
         private TemperatureSensor provider;
 
-        public void StartReporting(TemperatureSensor provider)
+        public void StartReporting(ISubject provider)
         {
-            this.provider = provider;
+            this.provider = (TemperatureSensor)provider;
             this.first = true;
             this.provider.Subscribe(this);
         }
